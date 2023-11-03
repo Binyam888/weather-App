@@ -16,6 +16,9 @@ const wetherIcon = document.querySelector(".weather-icon")
 
 async function weather (city){
     const response = await fetch(api + city + `&appid=${spi}`)
+    if (response.status == 404){
+        alert("invalid city name")
+    }
     const  data = await response.json()
     console.log(data.weather[0])
     cityName.innerHTML=data.name
