@@ -20,7 +20,7 @@ async function weather (city){
         alert("invalid city name")
     }
     const  data = await response.json()
-    console.log(data.weather[0])
+   
     cityName.innerHTML=data.name
     temp.innerHTML= Math.round(data.main.temp) + "°C"
        windSpeed.innerHTML = data.wind.speed + "km/hr"
@@ -56,7 +56,7 @@ async function weather (city){
 button.addEventListener("click",()=>{
     let value = search.value
     weather(value)
-    console.log(value)
+   
     search.value=""
     search.focus()
     // demo.innerHTML="changed"
